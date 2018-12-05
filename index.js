@@ -6,7 +6,7 @@ http://yuilibrary.com/license/
 */
 
 const sizes = [
-    'b', 'kb/s', 'Mb/s', 'Gb/s', 'Tb/s', 'Pb/s', 'Eb/s'
+    'b/s', 'kb/s', 'Mb/s', 'Gb/s', 'Tb/s', 'Pb/s', 'Eb/s'
 ];
 
 /**

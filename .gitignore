@@ -3,3 +3,5 @@ node_modules
 .idea
 prettybandwidth.iml
 package-lock.json
+coverage
+.nyc_output

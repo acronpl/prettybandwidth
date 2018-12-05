@@ -1,56 +1,47 @@
 'use strict';
-/*
-Copyright (c) 2013, Yahoo! Inc. All rights reserved.
-Code licensed under the BSD License:
-http://yuilibrary.com/license/
-*/
 
-const sizes = [
+const unitList = [
     'b/s', 'kb/s', 'Mb/s', 'Gb/s', 'Tb/s', 'Pb/s', 'Eb/s'
 ];
 
 /**
- Pretty print a bandwidth from bytes/s
+ Return formatted bandwidth from bytes
 @method pretty
-@param {Number} size The number to pretty print
-@param {Boolean} [nospace=false] Don't print a space
-@param {Boolean} [one=false] Only print one character
-@param {Number} [places=1] Number of decimal places to return
+@param {Number} bandwidth Number of bytes to format
+@param {Boolean} [short=false] Don't print a space between value and unit
+@param {Boolean} [unitOnly=false] Only print unit character
+@param {Number} [precision=1] Number of decimal places to return
 */
 
-module.exports = (size, nospace, one, places) => {
-    if (typeof nospace === 'object') {
-        const opts = nospace;
-        nospace = opts.nospace;
-        one = opts.one;
-        places = opts.places || 1;
+module.exports = (bandwidth, short, unitOnly, precision) => {
+    if (typeof short === 'object') {
+        const opts = short;
+        short = opts.short;
+        unitOnly = opts.unitOnly;
+        precision = opts.precision || 1;
     } else {
-        places = places || 1;
+        precision = precision || 1;
     }
 
-    let mysize;
-
-    sizes.forEach((unit, id) => {
-        if (one) {
+    let varsize;
+    unitList.forEach((unit, id) => {
+        if (unitOnly) {
             unit = unit.slice(0, 1);
         }
         const s = Math.pow(1024, id);
-        let fixed;
-        if (size >= s) {
-            fixed = String((size / s).toFixed(places));
-            if (fixed.indexOf('.0') === fixed.length - 2) {
-                fixed = fixed.slice(0, -2);
+        if (bandwidth >= s) {
+            let result = String((bandwidth / s).toFixed(precision));
+            if (result.indexOf('.0') === result.length - 2) {
+                result = result.slice(0, -2);
             }
-            mysize = fixed + (nospace ? '' : ' ') + unit;
+            varsize = result + (short ? '' : ' ') + unit;
         }
     });
 
-    // zero handling
-    // always prints in b/s
-    if (!mysize) {
-        let unit = (one ? sizes[0].slice(0, 1) : sizes[0]);
-        mysize = '0' + (nospace ? '' : ' ') + unit;
+    if (!varsize) {
+        let unit = (unitOnly ? unitList[0].slice(0, 1) : unitList[0]);
+        varsize = '0' + (short ? '' : ' ') + unit;
     }
 
-    return mysize;
+    return varsize;
 };

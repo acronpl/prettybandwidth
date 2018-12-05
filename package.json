@@ -1,7 +1,7 @@
 {
   "name": "prettybandwidth",
-  "description": "Convert bandwidth to other sizes for prettier logging",
-  "version": "1.0.1",
+  "description": "Convert bandwidth values to prettier format. (123456789 -> 117.7 Mb/s)",
+  "version": "1.1.0",
   "main": "./index.js",
   "devDependencies": {
     "codecov": "^2.3.0",
@@ -11,6 +11,11 @@
   },
   "keywords": [
     "bandwidth",
+    "transfer",
+    "spped",
+    "format",
+    "pretty",
+    "byte",
     "bytes",
     "b/s",
     "Mb/s"
@@ -24,12 +29,7 @@
   "bugs": {
     "url": "http://github.com/acronpl/prettybandwidth/issues"
   },
-  "licenses": [
-    {
-      "type": "BSD",
-      "url": "https://github.com/acronpl/prettybandwidth/blob/master/LICENSE"
-    }
-  ],
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "http://github.com/acronpl/prettybandwidth.git"

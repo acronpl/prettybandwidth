@@ -1,0 +1,37 @@
+{
+  "name": "prettybandwidth",
+  "description": "Convert bandwidth to other sizes for prettier logging",
+  "version": "1.0.0",
+  "main": "./index.js",
+  "devDependencies": {
+    "codecov": "^2.3.0",
+    "eslint": "^4.6.1",
+    "mocha": "^3.5.3",
+    "nyc": "^11.2.1"
+  },
+  "keywords": [
+    "bandwidth",
+    "bytes",
+    "b/s",
+    "Mb/s"
+  ],
+  "scripts": {
+    "lint": "eslint --fix .",
+    "pretest": "npm run lint",
+    "test": "nyc -r html -r text -r text-summary -r lcov mocha ./tests/*.js",
+    "publish-coverage": "codecov"
+  },
+  "bugs": {
+    "url": "http://github.com/acronpl/prettybandwidth/issues"
+  },
+  "licenses": [
+    {
+      "type": "BSD",
+      "url": "https://github.com/acronpl/prettybandwidth/blob/master/LICENSE"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/acronpl/prettybandwidth.git"
+  }
+}

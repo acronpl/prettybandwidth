@@ -1,4 +1,4 @@
-# PrettyBandwidth [![NPM version](https://img.shields.io/npm/v/prettybandwidth.svg?style=flat)](https://www.npmjs.com/package/prettybandwidth) [![NPM monthly downloads](https://img.shields.io/npm/dm/prettybandwidth.svg?style=flat)](https://npmjs.org/package/prettybandwidth) [![Linux Build Status](https://img.shields.io/travis/acronpl/prettybandwidth.svg?style=flat&label=Travis)](https://travis-ci.org/acronpl/prettybandwidth)
+# PrettyBandwidth [![NPM version](https://img.shields.io/npm/v/prettybandwidth.svg?style=flat)](https://www.npmjs.com/package/prettybandwidth) [![NPM monthly downloads](https://img.shields.io/npm/dm/prettybandwidth.svg?style=flat)](https://npmjs.org/package/prettybandwidth) [![Build Status](https://app.travis-ci.com/acronpl/prettybandwidth.svg?branch=master)](https://app.travis-ci.com/acronpl/prettybandwidth)
 
 >  Convert bandwidth values to prettier format (123456789 -> 117.7 Mb/s)
 
